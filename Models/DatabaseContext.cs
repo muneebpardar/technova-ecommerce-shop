@@ -12,5 +12,6 @@ namespace technova_ecommerce_shop.Models
         }
 
         public DbSet<Customer> customers { get; set; }
+        public DbSet<technova_ecommerce_shop.Models.Entities.Products> Products { get; set; } = default!;
     }
 }
