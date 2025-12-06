@@ -18,7 +18,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var categories = _databaseContext.Category.Include(p => p.Products).ToList();
+        var categories = _databaseContext.Category.Include(p => p.Product).ToList();
         return View();
     }
 

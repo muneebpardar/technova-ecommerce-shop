@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using technova_ecommerce.Models.Entities;
 
 [Table("Category")]
 public class Category
@@ -17,4 +18,6 @@ public class Category
     [Column("display_order")]
     [Display(Name = "Display Order")]
     public int DisplayOrder { get; set; }
-}
+
+    public ICollection<Product> Product { get; set; }
+    }
