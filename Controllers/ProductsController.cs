@@ -22,7 +22,9 @@ namespace technova_ecommerce_shop.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Product.ToListAsync());
+            return View(await _context.Product
+                .Include(p => p.Category)
+                .ToListAsync());
         }
 
         // GET: Products/Details/5
@@ -46,6 +48,8 @@ namespace technova_ecommerce_shop.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            var categories = _context.Category.ToList();
+            ViewBag.Categories =new SelectList(categories, "CategoryId", "CategoryName");
             return View();
         }
 
