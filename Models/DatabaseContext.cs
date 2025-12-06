@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using technova_ecommerce_shop.Models.Entities;
+using technova_ecommerce.Models.Entities;
 
 namespace technova_ecommerce_shop.Models
 {
@@ -12,5 +13,7 @@ namespace technova_ecommerce_shop.Models
         }
 
         public DbSet<Customer> customers { get; set; }
+        public DbSet<technova_ecommerce.Models.Entities.Product> Product { get; set; } = default!;
+        public DbSet<Category> Category { get; set; } = default!;
     }
 }
